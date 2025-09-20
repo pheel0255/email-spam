@@ -1,0 +1,18 @@
+<div class="container mt-5">
+  <h2>Email Spam Checker</h2>
+
+  <div class="mb-3">
+    <textarea [(ngModel)]="emailText" class="form-control" rows="5" placeholder="Enter email text..."></textarea>
+  </div>
+
+  <button (click)="checkSpam()" class="btn btn-primary" [disabled]="loading">
+    {{ loading ? 'Checking...' : 'Check Spam' }}
+  </button>
+
+  <div class="mt-3" *ngIf="result">
+    <div *ngIf="result.label" 
+         [class]="result.label === 'spam' ? 'alert alert-danger' : 'alert alert-success'">
+      <strong>Result:</strong> {{ result.label }}
+    </div>
+  </div>
+</div>
