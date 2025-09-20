@@ -16,6 +16,11 @@ export class EmailChecker {
   constructor(private emailService: Email) {}
 
   checkSpam() {
+  if (this.emailText.length > 200) {
+    this.result = { error: '❌ Please enter only the SUBJECT (max 500 characters).' };
+    return;
+  }
+
     this.loading = true;
     this.result = null;
 
