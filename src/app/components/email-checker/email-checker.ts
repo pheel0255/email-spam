@@ -30,4 +30,9 @@ export class EmailChecker {
       }
     });
   }
+
+  refresh() {
+    this.emailText = '';
+    this.result = null;
+  }
 }
