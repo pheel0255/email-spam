@@ -31,8 +31,12 @@ export class EmailChecker {
     });
   }
 
-  refresh() {
+ refresh() {
+  if (confirm('Are you sure you want to clear everything?')) {
     this.emailText = '';
     this.result = null;
+    this.loading = false;
   }
+}
+
 }
